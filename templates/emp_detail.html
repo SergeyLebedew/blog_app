@@ -1,0 +1,17 @@
+<!-- templates/emp_details.html-->
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="object-entry">
+        <h2>{{ object.name }}</h2>
+        <p>{{ object.emp_id }}</p>
+        <p>{{ object.phone }}</p>
+        <p>{{ object.addres }}</p>
+        <p>{{ object.department }}</p>
+
+    </div>
+
+{% endblock content %}

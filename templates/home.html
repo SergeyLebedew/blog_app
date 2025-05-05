@@ -1,0 +1,16 @@
+<!--templates/home.html-->
+
+{% extends 'base.html' %}
+{% block content %}
+
+  {% for emp in object_list %}
+    <div class="emp-entry">
+        <h2><a href= "{% url 'emp_detail' emp.pk %}">{{ emp.name }}</a></h2>
+        <p>{{ emp.working }}</p>
+        <p>{{ emp.emp_id }}</p>
+        <p>{{ emp.phone }}</p>
+        <p>{{ emp.addres }}</p>
+        <p>{{ emp.department }}</p>
+    </div>
+  {% endfor %}
+{% endblock content %}

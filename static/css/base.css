@@ -1,0 +1,44 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+}
+
+header {
+    border-bottom: 1px solid #999;
+    margin-bottom: 2rem;
+    dysplay: flex;
+}
+
+header h1 a {
+    color: red;
+    text-decoration: none;
+}
+.nav-left {
+    margin-right: auto;
+}
+
+.nav-right {
+    dysplay: flex;
+    padding-top:2rem;
+}
+.emp-entry {
+    margin-bottom: 2rem;
+}
+
+.emp-entry h2 {
+    margin: 0.5rem 0;
+}
+.emp-entry h2 a,
+.emp-entry h2 a:visited {
+    color: blue;
+    text-decoration: none;
+}
+.emp-entry p {
+    margin:0;
+    font-weight: 400;
+}
+.emp-entry h2 a:hover {
+    color:red;
+}
+
+
