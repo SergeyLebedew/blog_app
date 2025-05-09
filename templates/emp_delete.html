@@ -1,0 +1,16 @@
+<!--templates/emp_delete.html-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h1>Delete emp</h1>
+	<form action="" method="post">{% csrf_token %}
+		
+		<p>Are you sure you want to delete "{{ emp.name }}"?</P>
+
+		<input type="submit" value="Confirm" />
+	
+	</form>
+
+{% endblock %}

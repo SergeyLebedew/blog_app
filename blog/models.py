@@ -1,5 +1,9 @@
 from django.db import models
 
+from django.urls import reverse
+
+
+
 # Create your models here.
 
 class Emp(models.Model):
@@ -12,3 +16,6 @@ class Emp(models.Model):
     
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('emp_detail', args=[str(self.id)])

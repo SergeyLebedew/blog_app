@@ -14,4 +14,8 @@
 
     </div>
 
+    <a href="{% url 'emp_edit' emp.pk %}">+ Edit Emp</a>
+
+    <a href="{% url 'emp_delete' emp.pk %}">- Delete Emp</a>
+
 {% endblock content %}

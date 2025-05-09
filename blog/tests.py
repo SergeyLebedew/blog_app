@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 
-from django.test import TestCase
+from django.test import Client, TestCase
 
 from django.urls import reverse
 
@@ -56,6 +56,57 @@ class BlogTests(TestCase):
         self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, 'Andrey')
         self.assertTemplateUsed(response, 'emp_detail.html')
+
+
+    def test_get_absolute_url(self):
+
+        self.assertEquals(self.emp.get_absolute_url(), '/emp/1/')
+
+
+    def test_emp_create_view(self):
+
+        response = self.client.post(reverse('emp_new'), { 'name':'New'})
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'New')
+        #self.assertContains(response, '12')
+        #self.assertContains(response, '25')
+        #self.assertContains(response, 'NewA')
+        #self.assertContains(response, 'True')
+        #self.assertContains(response, 'NewD')
+
+
+    def test_emp_update_view(self):
+
+        response = self.client.post(reverse('emp_edit', args='1'), { 
+                                   'name': 'Updated name',
+                                   'emp_id': 'Updated emp_id',
+                                   'phone': '1phone',
+                                   'address': 'Updated address',
+                                   'working': 'False',
+                                   'department': 'Updated department'
+
+        })
+        self.assertEqual(response.status_code, 302)
+
+
+    def test_emp_delete_view(self):
+
+        response = self.client.get(reverse('emp_delete', args='1')) 
+        
+        self.assertEqual(response.status_code, 200)
+
+
+
+
+
+
+
+        
+
+
+
+
+
 
 
 

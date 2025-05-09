@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog', # new
+    'accounts', # new
 ]
 
 MIDDLEWARE = [
@@ -129,7 +130,12 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #static
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]   # основной директорий для статических файлов
+
+
+LOGIN_REDIRECT_URL = 'home'    # Перенапрвление на домашнюю страницу после авторизации
+
+LOGOUT_REDIRECT_URL = 'home'   # Перенаправление на домашнюю страницу после выхода
 
 
 
